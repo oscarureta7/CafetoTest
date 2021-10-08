@@ -2,119 +2,85 @@
 using System;
 using System.Configuration;
 using System.IO;
+using System.Collections.Generic;
 
 namespace CafetoTest
 {
-    public class JobLogger
+    public class JobLogger : IJobLogger
     {
-        private static bool _logToFile;
-        private static bool _logToConsole;
+        // Traditional singleton implementation, not used to enable dependency injection
+        #region Singleton Implementation
+        //private static Lazy<JobLogger> _instance = new Lazy<JobLogger>(() => new JobLogger());
+        //public static JobLogger Instance { get => _instance.Value; }
+        #endregion
 
-        private static bool _logMessageType;
-        private static bool _logWarningType;
-        private static bool _logErrorType;
+        // Static members removed to enable varied life cycles (Transient, Scoped & Singleton)
+        #region Private Fields
+        private bool _initialized;
 
-        private static bool _initialized;
+        private ILoggingStrategy[] _destinationStrategies;
+        private LogMessageType[] _allowedMessageTypes;
+        #endregion
 
-        public JobLogger(bool logToFile, bool logToConsole, bool logMessageType, bool logWarningType, bool logErrorType)
+        #region Properties
+        public ILoggingStrategy[] Destinations { get => _destinationStrategies; }
+        public LogMessageType[] MessageTypeConfiguration { get => _allowedMessageTypes; }
+        #endregion
+
+        public JobLogger(ILoggingStrategy[] destinationList, LogMessageType[] allowedMessageTypes)
         {
-            _logErrorType = logErrorType;
-            _logMessageType = logMessageType;
-            _logWarningType = logWarningType;
-
-            _logToFile = logToFile;
-            _logToConsole = logToConsole;
+            SetDestinations(destinationList);
+            SetMessageTypeConfiguration(allowedMessageTypes);
             _initialized = true;
         }
 
-        public static void LogMessage(string message, bool messageType, bool warningType, bool errorType)
+        #region Public Methods
+        public int LogMessage(LogMessageType type, string message)
         {
+            if (_allowedMessageTypes == null)
+                return 0;
+            if (_allowedMessageTypes.Length == 0)
+                return 0;
 
-            if (!_initialized) throw new JobLoggerNotInitializedException();
+            if (!new List<LogMessageType>(_allowedMessageTypes).Contains(type))
+                return 0;
 
-            message.Trim();
+            int outputCount = 0;
 
-            if (message == null || message.Length == 0)
+            if (_destinationStrategies == null)
             {
-                return;
+                throw new JobLoggerNoDestinationsSetException();
+            } else
+            {
+                foreach (ILoggingStrategy destination in Destinations)
+                {
+                    if(destination.Log(type, message))
+                    {
+                        ++outputCount;
+                    }
+                }
             }
 
-            if (!_logToConsole && !_logToFile)
-            {
-                throw new Exception("Invalid configuration");
-            }
-
-            if ((!_logErrorType && !_logMessageType && !_logWarningType) || (!messageType && !warningType && !errorType))
-            {
-                throw new Exception("Error or Warning or Message must be specified");
-            }
-
-            int t;
-
-            if (messageType && _logMessageType)
-            {
-                t = 1;
-            }
-
-            if (errorType && _logErrorType)
-            {
-                t = 2;
-            }
-
-            if (warningType && _logWarningType)
-            {
-                t = 3;
-            }
-
-            string l = string.Empty;
-
-            var logFolder = ConfigurationManager.AppSettings["LogFileDirectory"];
-            if (string.IsNullOrEmpty(logFolder)) logFolder = Environment.CurrentDirectory;
-            var logFileName = "LogFile" + DateTime.Now.ToShortDateString().Replace("/", ".") + ".txt";
-            var logFullFilePath = Path.Combine(logFolder, logFileName);
-
-            if (File.Exists(logFullFilePath))
-            {
-                l = File.ReadAllText(logFullFilePath);
-
-            }
-
-            if (errorType && _logErrorType)
-            {
-                l = l + DateTime.Now.ToShortDateString() + " Error   " + message + Environment.NewLine;
-            }
-
-            if (warningType && _logWarningType)
-            {
-                l = l + DateTime.Now.ToShortDateString() + " Warning " + message + Environment.NewLine;
-            }
-
-            if (messageType && _logMessageType)
-            {
-                l = l + DateTime.Now.ToShortDateString() + " Message " + message + Environment.NewLine;
-            }
-
-
-            if (!Directory.Exists(logFolder)) Directory.CreateDirectory(logFolder);
-
-            System.IO.File.WriteAllText(logFullFilePath, l);
-
-            if (errorType && _logErrorType)
-            {
-                Console.ForegroundColor = ConsoleColor.Red;
-            }
-
-            if (warningType && _logWarningType)
-            {
-                Console.ForegroundColor = ConsoleColor.Yellow;
-            }
-
-            if (messageType && _logMessageType)
-            {
-                Console.ForegroundColor = ConsoleColor.White;
-            }
-
-            Console.WriteLine(DateTime.Now.ToShortDateString() + message);
+            return outputCount;
         }
+    
+        private void SetDestinations(ILoggingStrategy[] destinationsList)
+        {
+            if (destinationsList == null)
+                throw new ArgumentNullException("destinationsList parameter cannot be null.");
+            if (destinationsList.Length == 0)
+                throw new JobLoggerEmptyDestinationsAssignmentException();
+
+            _destinationStrategies = destinationsList;
+        }
+        
+        private void SetMessageTypeConfiguration(LogMessageType[] allowedMessageTypes)
+        {
+            if (allowedMessageTypes == null)
+                throw new ArgumentNullException("messageTypeConfiguration parameter cannot be null");
+
+            _allowedMessageTypes = allowedMessageTypes;
+        }
+        #endregion
     }
 }

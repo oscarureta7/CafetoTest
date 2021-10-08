@@ -15,3 +15,23 @@ C:\Users\developer\Desktop\Cafeto\CafetoTestUnitTests\obj\Debug\CafetoTestUnitTe
 C:\Users\developer\Desktop\Cafeto\CafetoTestUnitTests\obj\Debug\CafetoTestUnitTests.csproj.CopyComplete
 C:\Users\developer\Desktop\Cafeto\CafetoTestUnitTests\obj\Debug\CafetoTestUnitTests.dll
 C:\Users\developer\Desktop\Cafeto\CafetoTestUnitTests\obj\Debug\CafetoTestUnitTests.pdb
+C:\Users\OSCAR\Desktop\Cafeto_1\Cafeto - solution\CafetoTestUnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\OSCAR\Desktop\Cafeto_1\Cafeto - solution\CafetoTestUnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\OSCAR\Desktop\Cafeto_1\Cafeto - solution\CafetoTestUnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\OSCAR\Desktop\Cafeto_1\Cafeto - solution\CafetoTestUnitTests\bin\Debug\es\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.resources.dll
+C:\Users\OSCAR\Desktop\Cafeto_1\Cafeto - solution\CafetoTestUnitTests\bin\Debug\es\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.resources.dll
+C:\Users\OSCAR\Desktop\Cafeto_1\Cafeto - solution\CafetoTestUnitTests\bin\Debug\es\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+C:\Users\OSCAR\Desktop\Cafeto_1\Cafeto - solution\CafetoTestUnitTests\bin\Debug\CafetoTestUnitTests.dll.config
+C:\Users\OSCAR\Desktop\Cafeto_1\Cafeto - solution\CafetoTestUnitTests\bin\Debug\CafetoTestUnitTests.dll
+C:\Users\OSCAR\Desktop\Cafeto_1\Cafeto - solution\CafetoTestUnitTests\bin\Debug\CafetoTestUnitTests.pdb
+C:\Users\OSCAR\Desktop\Cafeto_1\Cafeto - solution\CafetoTestUnitTests\bin\Debug\CafetoTest.dll
+C:\Users\OSCAR\Desktop\Cafeto_1\Cafeto - solution\CafetoTestUnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\OSCAR\Desktop\Cafeto_1\Cafeto - solution\CafetoTestUnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\OSCAR\Desktop\Cafeto_1\Cafeto - solution\CafetoTestUnitTests\bin\Debug\CafetoTest.pdb
+C:\Users\OSCAR\Desktop\Cafeto_1\Cafeto - solution\CafetoTestUnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Users\OSCAR\Desktop\Cafeto_1\Cafeto - solution\CafetoTestUnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\OSCAR\Desktop\Cafeto_1\Cafeto - solution\CafetoTestUnitTests\obj\Debug\CafetoTestUnitTests.csprojAssemblyReference.cache
+C:\Users\OSCAR\Desktop\Cafeto_1\Cafeto - solution\CafetoTestUnitTests\obj\Debug\CafetoTestUnitTests.csproj.CoreCompileInputs.cache
+C:\Users\OSCAR\Desktop\Cafeto_1\Cafeto - solution\CafetoTestUnitTests\obj\Debug\CafetoTestUnitTests.csproj.CopyComplete
+C:\Users\OSCAR\Desktop\Cafeto_1\Cafeto - solution\CafetoTestUnitTests\obj\Debug\CafetoTestUnitTests.dll
+C:\Users\OSCAR\Desktop\Cafeto_1\Cafeto - solution\CafetoTestUnitTests\obj\Debug\CafetoTestUnitTests.pdb

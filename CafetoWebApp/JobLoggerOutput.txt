@@ -1,0 +1,9 @@
+08/10/2021 04:48:05 p. m. Info : Cafeto Logger was successfully injected! 
+08/10/2021 04:48:09 p. m. Error : Your event has no subscribers! 
+08/10/2021 04:48:09 p. m. Warning : Always use JobLogger! 
+08/10/2021 04:50:00 p. m. Info : Cafeto Logger was successfully injected! 
+08/10/2021 04:50:59 p. m. Error : Your event has no subscribers! 
+08/10/2021 04:50:59 p. m. Warning : Always use JobLogger! 
+08/10/2021 04:55:46 p. m. Info : Cafeto Logger was successfully injected! 
+08/10/2021 04:55:53 p. m. Error : Your event has no subscribers! 
+08/10/2021 04:55:53 p. m. Warning : Always use JobLogger! 

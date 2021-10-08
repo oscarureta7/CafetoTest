@@ -3,3 +3,9 @@ C:\Users\developer\Desktop\Cafeto\CafetoTest\bin\Debug\CafetoTest.pdb
 C:\Users\developer\Desktop\Cafeto\CafetoTest\obj\Debug\CafetoTest.csproj.CoreCompileInputs.cache
 C:\Users\developer\Desktop\Cafeto\CafetoTest\obj\Debug\CafetoTest.dll
 C:\Users\developer\Desktop\Cafeto\CafetoTest\obj\Debug\CafetoTest.pdb
+C:\Users\OSCAR\Desktop\Cafeto_1\Cafeto - solution\CafetoTest\bin\Debug\CafetoTest.dll
+C:\Users\OSCAR\Desktop\Cafeto_1\Cafeto - solution\CafetoTest\bin\Debug\CafetoTest.pdb
+C:\Users\OSCAR\Desktop\Cafeto_1\Cafeto - solution\CafetoTest\obj\Debug\CafetoTest.csprojAssemblyReference.cache
+C:\Users\OSCAR\Desktop\Cafeto_1\Cafeto - solution\CafetoTest\obj\Debug\CafetoTest.csproj.CoreCompileInputs.cache
+C:\Users\OSCAR\Desktop\Cafeto_1\Cafeto - solution\CafetoTest\obj\Debug\CafetoTest.dll
+C:\Users\OSCAR\Desktop\Cafeto_1\Cafeto - solution\CafetoTest\obj\Debug\CafetoTest.pdb
